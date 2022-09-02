@@ -6,8 +6,8 @@ export const server = express();
 
 server.use(cors());
 
-server.get("/*", async (req, res) => {
-	await save(req.path);
+server.get("/song/*", async (req, res) => {
+	await save(req.path.replace("/song"));
 	res.status(200);
 	res.send("ok");
 });
