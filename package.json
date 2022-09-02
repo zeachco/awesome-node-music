@@ -1,11 +1,15 @@
 {
-  "name": "soundcloud-dl",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.18.1",
-    "soundcloud-downloader": "^1.0.0"
-  }
+	"name": "soundcloud-dl",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.18.1",
+		"soundcloud-downloader": "^1.0.0"
+	},
+	"scripts": {
+		"start": "node ./src/index.mjs",
+		"dev": "nodemon ./src/index.mjs"
+	}
 }
