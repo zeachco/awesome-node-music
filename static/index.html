@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Soundcloud Downloader</title>
+	</head>
+	<body>
+		Drag this link in your bookmark bar and click it when visiting a song on
+		soundcloud
+		<a id="bookmark">Download this</a>
+
+		<script>
+			const script = `
+				fetch(
+					location.href.replace("https://soundcloud.com/", "http://localhost:3000/"),
+					{ mode: "cors" }
+				);
+			`;
+			document.getElementById("bookmark").href = `javascript: ${script}`;
+		</script>
+	</body>
+</html>
