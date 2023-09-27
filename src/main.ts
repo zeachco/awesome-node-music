@@ -28,7 +28,21 @@ args.forEach(async (arg: string) => {
 	}
 });
 
+const script = `
+javascript: fetch(
+	location.href.replace("https://soundcloud.com/", "http://localhost:3000/"),
+	{
+		mode: "cors",
+	}
+);
+`
+	.replaceAll("\n", "")
+	.replaceAll("\t", "");
+
 if (!found) {
 	ensurePath(SAVE_FOLDER);
 	server.listen(3000, "", () => console.log("listening on port 3000"));
+	console.log(
+		`Bookmark this to download songs from soundcloud:\n\n${script}\n\n`
+	);
 }
